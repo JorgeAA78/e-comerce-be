@@ -4,8 +4,11 @@ Backend completo de e-commerce construido con **TypeScript + Express + Firebase 
 
 ## 📋 Colección Postman
 
-> 🔗 [Ver colección Postman completa](https://www.postman.com/)  
-> *(Importar el archivo `E-commerce-API.postman_collection.json` incluido en el repo)*
+> 🔗 **[Ver colección Postman completa](https://grisjaa-9628505.postman.co/workspace/Jorge-Ariel-ALTAMIRANO's-Worksp~37644488-eb2b-4e69-8e1b-cb39d3e3c387/collection/49147880-144aad03-9f47-4327-bc1b-d8853f9e325a?action=share&source=copy-link&creator=49147880)**
+
+> 📦 También podés importar el archivo `E-commerce-API.postman_collection.json` incluido en el repo
+
+> 🐙 **[Repositorio GitHub](https://github.com/JorgeAA78/e-comerce-be)**
 
 ---
 
