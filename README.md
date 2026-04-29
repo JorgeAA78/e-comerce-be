@@ -178,10 +178,24 @@ npm run dev
 
 ### Usuarios de prueba MercadoPago
 
-Para testear el flujo completo:
-1. En [developers.mercadopago.com](https://developers.mercadopago.com) crear **dos usuarios de prueba**
-2. El **vendedor** es el que tiene el `MP_ACCESS_TOKEN` en tu `.env`
-3. El **comprador** es con el que vas a completar el checkout
+| Rol | Usuario | Contraseña |
+|-----|---------|------------|
+| 🏪 **Vendedor** | Cuenta real de MercadoPago (token en `.env`) | — |
+| 🛒 **Comprador** | `TESTUSER2213039931560353999` | `mFlQsfcyZu` |
+
+> ⚠️ **Importante:** Para pagar en el sandbox, loguearse en la pantalla de MercadoPago con el usuario **comprador** de prueba, NO con tu cuenta real.
+
+### Tarjetas de prueba (usar con el comprador)
+
+| Resultado | Marca | Número | CVV | Vencimiento |
+|-----------|-------|--------|-----|-------------|
+| ✅ Aprobado | Visa | `4509 9535 6623 3704` | `123` | `11/25` |
+| ✅ Aprobado | Mastercard | `5031 7557 3453 0604` | `123` | `11/25` |
+| ❌ Rechazado | Visa | `4000 0000 0000 0044` | `123` | `11/25` |
+
+**Datos del titular al completar el formulario:**
+- **Nombre:** `APRO` (para que el pago sea aprobado)
+- **DNI:** `12345678`
 
 ---
 

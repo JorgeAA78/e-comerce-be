@@ -11,7 +11,7 @@ const products = [
         price: 15000,
         stock: 50,
         category: 'ropa',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Remera+Oversize',
+        imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
         brand: 'UrbanStyle',
     },
     {
@@ -20,7 +20,7 @@ const products = [
         price: 89000,
         stock: 20,
         category: 'calzado',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Zapatillas+Running',
+        imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop',
         brand: 'SpeedRun',
     },
     {
@@ -29,7 +29,7 @@ const products = [
         price: 27000,
         stock: 35,
         category: 'ropa',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Hoodie+Clasico',
+        imageUrl: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop',
         brand: 'UrbanStyle',
     },
     {
@@ -38,7 +38,7 @@ const products = [
         price: 42000,
         stock: 15,
         category: 'accesorios',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Mochila+Urbana',
+        imageUrl: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop',
         brand: 'TravelGear',
     },
     {
@@ -47,7 +47,7 @@ const products = [
         price: 8500,
         stock: 60,
         category: 'accesorios',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Gorra+Snapback',
+        imageUrl: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop',
         brand: 'UrbanStyle',
     },
     {
@@ -56,7 +56,7 @@ const products = [
         price: 32000,
         stock: 25,
         category: 'ropa',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Pantalon+Cargo',
+        imageUrl: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&h=400&fit=crop',
         brand: 'Urban Tactical',
     },
     {
@@ -65,7 +65,7 @@ const products = [
         price: 65000,
         stock: 10,
         category: 'electronica',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Auriculares+BT',
+        imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop',
         brand: 'SoundMax',
     },
     {
@@ -74,7 +74,7 @@ const products = [
         price: 12000,
         stock: 40,
         category: 'accesorios',
-        imageUrl: 'https://via.placeholder.com/400x400?text=Cinturon+Cuero',
+        imageUrl: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=400&h=400&fit=crop',
         brand: 'LeatherCo',
     },
 ];
@@ -91,6 +91,10 @@ const deleteCollection = async (collectionName: string) => {
 
 const seedProducts = async () => {
     console.log('🌱 Iniciando seed de productos...');
+
+    // Limpiar índice de Algolia
+    await productsIndex.clearObjects();
+    console.log('🗑️  Índice de Algolia limpiado');
 
     // Limpiar colección existente para evitar duplicados
     await deleteCollection('products');
