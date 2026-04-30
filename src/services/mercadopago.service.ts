@@ -9,7 +9,9 @@ export interface CreatePreferenceInput {
 }
 
 export const createMercadoPagoPreference = async (input: CreatePreferenceInput) => {
-    const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+    // Usamos variables separadas para Backend y Frontend
+    const backendUrl = process.env.BACKEND_URL || 'https://e-comerce-be-production.up.railway.app';
+    const frontendUrl = process.env.FRONTEND_URL || 'https://ecommerce-mirasoles.vercel.app';
 
     const preference = await preferenceClient.create({
         body: {
@@ -26,11 +28,13 @@ export const createMercadoPagoPreference = async (input: CreatePreferenceInput) 
                 email: input.userEmail,
             },
             external_reference: input.orderId,
-            notification_url: `${baseUrl}/ipn/mercadopago`,
+            // 1. El Webhook va al Backend:
+            notification_url: `${backendUrl}/ipn/mercadopago`,
+            // 2. El usuario regresa a la pantalla de /thanks del Frontend:
             back_urls: {
-                success: `${baseUrl}/order/${input.orderId}`,
-                failure: `${baseUrl}/order/${input.orderId}`,
-                pending: `${baseUrl}/order/${input.orderId}`,
+                success: `${frontendUrl}/thanks?status=approved`,
+                failure: `${frontendUrl}/thanks?status=failure`,
+                pending: `${frontendUrl}/thanks?status=pending`,
             },
             metadata: {
                 orderId: input.orderId,
